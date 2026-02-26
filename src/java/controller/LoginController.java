@@ -30,6 +30,11 @@ public class LoginController extends HttpServlet {
             session.setAttribute("account", acc);
             response.sendRedirect(request.getContextPath() + "/view/Accounts.jsp");
         } else {
+            // Nếu đăng nhập sai thì xoá account khỏi session để không hiện Hello admin...
+            HttpSession session = request.getSession(false);
+            if (session != null) {
+                session.removeAttribute("account");
+            }
             request.setAttribute("error", "Sai tài khoản hoặc mật khẩu!");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
