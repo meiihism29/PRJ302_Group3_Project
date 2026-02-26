@@ -1,0 +1,231 @@
+/* ====== Global layout ====== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;       /* xếp header trên, form dưới */
+    align-items: center;
+    justify-content: flex-start;  /* bắt đầu từ phía trên */
+    /* Hình nền phía sau (đặt file tại: web/static/img/login-bg.jpg) */
+    background: url("../img/login-bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* ====== Login container ====== */
+.login-container {
+    background-color: #ffffff;
+    padding: 32px 28px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #2d3436;
+    letter-spacing: 0.5px;
+}
+
+.login-container form > div {
+    margin-bottom: 18px;
+}
+
+.login-container label {
+    display: block;
+    font-size: 14px;
+    color: #636e72;
+    margin-bottom: 6px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #dfe6e9;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+    outline: none;
+    border-color: #0984e3;
+    box-shadow: 0 0 0 3px rgba(9, 132, 227, 0.15);
+}
+
+/* ====== Buttons ====== */
+.login-container button {
+    cursor: pointer;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.login-container button[type="submit"] {
+    background-color: #0984e3;
+    color: #ffffff;
+    margin-right: 8px;
+    box-shadow: 0 6px 16px rgba(9, 132, 227, 0.4);
+}
+
+.login-container button[type="submit"]:hover {
+    background-color: #0871c3;
+    transform: translateY(-1px);
+}
+
+.login-container button[type="button"] {
+    background-color: #dfe6e9;
+    color: #2d3436;
+}
+
+.login-container button[type="button"]:hover {
+    background-color: #b2bec3;
+    transform: translateY(-1px);
+}
+
+.login-container button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ====== Error message ====== */
+.login-container .error-message {
+    margin-bottom: 12px;
+    color: #d63031;
+    font-size: 13px;
+}
+
+/* ====== Responsive ====== */
+@media (max-width: 480px) {
+    .login-container {
+        margin: 16px;
+        padding: 24px 20px;
+    }
+
+    .login-container h2 {
+        font-size: 20px;
+    }
+}
+
+/* Center container */
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+/* Card */
+.card {
+    /* Màu khác để khung login nổi bật hơn */
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+    width: 380px;
+    color: #000;
+}
+
+/* Login specific */
+.login-card h2 {
+    margin-bottom: 20px;
+}
+
+/* Header trên đầu trang, giữa màn hình */
+.header {
+    margin-top: 40px;
+    text-align: center;
+    color: #000;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 6px;
+}
+
+.header p {
+    font-size: 16px;
+}
+
+/* Nút dùng chung */
+.btn {
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.btnPrimary {
+    background-color: #e53935; /* đỏ */
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(229, 57, 53, 0.5);
+}
+
+.btnPrimary:hover {
+    background-color: #c62828;
+    transform: translateY(-1px);
+}
+
+.btnSecondary {
+    background-color: transparent;
+    color: #e53935;
+    border: 1px solid #e53935;
+}
+
+.btnSecondary:hover {
+    background-color: rgba(229, 57, 53, 0.08);
+    transform: translateY(-1px);
+}
+
+/* Form group */
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Text center */
+.text-center {
+    text-align: center;
+}
+
+/* Alert error */
+.alert-error {
+    background-color: var(--danger-light);
+    color: var(--danger);
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.forgot-link {
+    color: var(--primary);
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+    color: var(--primary-dark);
+}
